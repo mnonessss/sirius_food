@@ -9,6 +9,12 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      # .env в репозиторий не попадает, а Settings читает эти поля при импорте.
+      SECRET_KEY: ci-test-secret
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/sirius_food
+      REDIS_URL: redis://localhost:6379/0
+      RABBITMQ_URL: amqp://guest:guest@localhost:5672/
 
     steps:
       - uses: actions/checkout@v4

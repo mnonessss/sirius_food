@@ -1,5 +1,6 @@
 aio-pika
 alembic
+celery
 grpcio
 grpcio-tools
 fastapi==0.110.0
